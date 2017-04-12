@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -52,6 +52,14 @@
                                 <frame key="frameInset" minX="33" minY="115" width="301" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yf7-z6-dMd">
+                                <frame key="frameInset" minX="144" minY="435" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Mostrar web"/>
+                                <connections>
+                                    <segue destination="Ag5-xI-Fgr" kind="show" id="Trk-vt-CIw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -62,6 +70,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="hNF-pp-Hca">
+            <objects>
+                <viewController id="Ag5-xI-Fgr" customClass="WebViewController" customModule="CameraGalaeryEnIOs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VRv-h8-r5V"/>
+                        <viewControllerLayoutGuide type="bottom" id="zCr-hw-dVo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sgX-9r-CGg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9QS-ao-MpP">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9QS-ao-MpP" secondAttribute="trailing" id="9GR-sv-g1P"/>
+                            <constraint firstItem="zCr-hw-dVo" firstAttribute="top" secondItem="9QS-ao-MpP" secondAttribute="bottom" id="AoK-VF-zm3"/>
+                            <constraint firstItem="9QS-ao-MpP" firstAttribute="leading" secondItem="sgX-9r-CGg" secondAttribute="leadingMargin" id="CA2-lT-c0e"/>
+                            <constraint firstItem="9QS-ao-MpP" firstAttribute="top" secondItem="VRv-h8-r5V" secondAttribute="bottom" id="CwT-HF-Xc8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="9QS-ao-MpP" id="GwT-wx-e5k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bdo-qL-KcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="26"/>
         </scene>
     </scenes>
 </document>
